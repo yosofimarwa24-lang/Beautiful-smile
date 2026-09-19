@@ -1,0 +1,394 @@
+/* =========================================
+   VARIABLES & GENERAL
+========================================= */
+
+:root {
+    --primary-color: #0077b6;      /* آبی مدرن اقیانوسی */
+    --dark-color: #03045e;         /* سرمه‌ای تیره برای متن‌ها و عناوین */
+    --light-bg: #f8f9fa;           /* سفید استخوانی ملایم برای پس‌زمینه اصلی */
+    --accent-color: #00f5d4;       /* فیروزه‌ای درخشان برای دکمه‌ها و افکت‌های هاور */
+    --text-muted: #6c757d;         /* خاکستری ملایم برای متن‌های فرعی */
+    --white: #ffffff;              /* سفید خالص */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background: var(--light-bg);
+    color: var(--dark-color);
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero-section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url("./image/Background\ \(1\).jpg");
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    /* تغییر گرادینت به طیف سرمه‌ای تیره و مدرن */
+    background: linear-gradient(
+        rgba(3, 4, 94, 0.75),
+        rgba(0, 119, 182, 0.82)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 50px 0;
+}
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.hero-title span {
+    color: var(--accent-color);
+}
+
+/* =========================================
+   TYPING
+========================================= */
+
+.typing-text {
+    color: var(--white);
+    font-size: 18px;
+    min-height: 30px;
+    margin-bottom: 40px;
+}
+
+.typing-text::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+.countdown {
+    margin-bottom: 25px;
+}
+
+.time-box {
+    min-height: 90px;
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.10);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.time-box:hover {
+    background: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.time-box span {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.time-box small {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.coming-text {
+    color: var(--white);
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.social-icons a {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+/* =========================================
+   THEME BUTTON
+========================================= */
+
+.theme-button {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    z-index: 10;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--primary-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.contact-section {
+    padding: 90px 0;
+    background: var(--light-bg);
+}
+
+.section-heading {
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.section-heading h2 span {
+    color: var(--primary-color);
+}
+
+.section-heading p {
+    color: var(--text-muted);
+}
+
+/* =========================================
+   CONTACT CARD
+========================================= */
+
+.contact-card {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 15px;
+    border-top: 4px solid var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.form-label {
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.form-control {
+    padding: 12px;
+    border: 1px solid #cbded4; /* حفظ کادر ملایم ورودی‌ها */
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 119, 182, 0.15);
+}
+
+textarea {
+    resize: none;
+}
+
+/* =========================================
+   SEND BUTTON
+========================================= */
+
+.send-button {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
+    transition: 0.3s;
+}
+
+.send-button:hover {
+    background: var(--dark-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   CONTACT INFORMATION
+========================================= */
+
+.contact-info {
+    height: 100%;
+    background: var(--dark-color);
+    color: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(3, 4, 94, 0.15);
+}
+
+.contact-info h3 {
+    color: var(--accent-color);
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   INFO ITEMS
+========================================= */
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-item h6 {
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    margin: 0;
+    color: var(--light-bg);
+    font-size: 14px;
+}
+
+/* =========================================
+   MAP
+========================================= */
+
+.map-container {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 3px solid var(--primary-color);
+    margin-top: 25px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: #020340; /* یک درجه تیره‌تر از سرمه‌ای اصلی برای هماهنگی فوتر */
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 32px; }
+    .typing-text { font-size: 15px; }
+    .time-box { min-height: 75px; }
+    .time-box span { font-size: 22px; }
+    .time-box small { font-size: 11px; }
+    .contact-section { padding: 60px 15px; }
+    .contact-card { padding: 20px; }
+    .contact-info { padding: 20px; }
+    .section-heading h2 { font-size: 30px; }
+}
+/* =========================================
+   DARK MODE COLORS ONLY
+========================================= */
+body.dark-mode {
+    background: #03045e !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .contact-section {
+    background: #020340 !important;
+}
+
+body.dark-mode .contact-card {
+    background: #03045e !important;
+    border-top-color: #00f5d4 !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+}
+
+body.dark-mode .form-label, 
+body.dark-mode .section-heading h2 {
+    color: #ffffff !important;
+}
+
+body.dark-mode .form-control {
+    background: #020340 !important;
+    color: #ffffff !important;
+    border-color: #0077b6 !important;
+}
+
+body.dark-mode .contact-info {
+    background: #020340 !important;
+}
